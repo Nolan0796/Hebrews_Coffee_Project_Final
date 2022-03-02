@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/app_1/style.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="header">
+                <img src="{% static 'images/hebrews-coffee-logo.png' %}" alt="Logo" height=170 width=170>
+                    <h5>Logged in as, <br> {{user.first_name}} {{user.last_name}}<br><a href="/user/my_account">My Account</a>| <a href="/user/logout">Logout</a></h5>
+            </div>
+            <div class="body">
+                <div class="nav_bar">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                        <li><a href="/order">Order-Now</a></li>
+                    </ul>
+                </div>
+                <h1>Thank you for your order!</h1>
+                <p>Your order confirmation number is: {{order.id}}</p>
+                <p>We are working diligently on your order. Your order should be ready for pickup in about 15 minutes!</p>
+                <img src="https://i.makeagif.com/media/1-22-2017/eQ9zo4.gif" alt="preparing-coffee">
+                <div id="location">
+                    <h3>Hebrews Coffee</h3>
+                    <h3>2434 Sunset Drive</h3>
+                    <h3>Lake Havasu City, AZ 86404</h3>
+                    <div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="330" id="gmap_canvas" src="https://maps.google.com/maps?q=2434%20Sunset%20Drive,%20Lake%20Havasu%20City,%20AZ%2086404&t=k&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br><style>.mapouter{position:relative;text-align:right;height:330px;width:500px;}</style><a href="https://www.embedgooglemap.net">google map code embed</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:330px;width:500px;}</style></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="order">Order Page</a>
+</body>
+</html>

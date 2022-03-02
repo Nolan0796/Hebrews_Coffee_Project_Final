@@ -1,0 +1,206 @@
+* {
+	/* outline: 1px dotted red; */
+    vertical-align: baseline;
+	font-weight: inherit;
+	font-family: inherit;
+	font-style: inherit;
+	border: 0 none;
+	padding: 0;
+	margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.background {
+    background-image: url("https://mspmag.com/downloads/51327/download/shutterstock_250740013.jpg?cb=d4a754598dfd50f39407b250fbbd390a&w=1280&h=");
+}
+
+.container {
+    width: 1000px;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    background-color: wheat;
+    min-height: 1009px;
+    padding-bottom: 20px;
+}
+
+    .header {
+        width: 1000px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .header img {
+            margin-left: 5px;
+        }
+
+        .header h5 {
+            margin-right: 5px;
+
+        }
+
+        .header a {
+            margin-right: 5px;
+            text-decoration: none;
+            color: rgb(127,80,55);
+        }
+
+    .nav_bar {
+        display: flex;
+        justify-content: center;
+    }
+
+        .nav_bar ul {
+            border-bottom: solid rgb(127,80,55) 2px;
+            list-style-type: none;
+
+        }
+
+        .nav_bar li {
+            display: inline;
+        }
+
+            .nav_bar li a {
+                text-decoration: none;
+                color:rgb(127,80,55);
+                margin: 0px 25px;
+                font-size: 20px;
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                text-shadow: 1px 1px 2px rgb(49, 33, 25);
+            }
+
+    .body h1 {
+        text-align: center;
+        margin: 28px;
+        color: rgb(127,80,55);
+        font-weight: bold;
+        text-shadow: 2px 2px 3px rgb(49, 33, 25);
+    }
+
+    .body h2 {
+        text-align: center;
+        margin: 28px;
+        color: rgb(127,80,55);
+        font-weight: bold;
+        text-shadow: 2px 2px 3px rgb(49, 33, 25);
+    }
+
+    .body img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgb(49 33 25);
+    }
+
+    .body p {
+        text-align: center;
+        width: 800px;
+        margin: 25px 100px;
+    }
+
+    .body button {
+        background-color: rgb(127,80,55);
+        padding: 5px;
+        border-radius: 5px;
+        display: block;
+        margin: 5px auto;
+        box-shadow: 5px 5px 9px rgb(49, 33, 25);
+    }
+
+    .body button a {
+        color: wheat;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    .drink h3 {
+        text-align: center;
+        margin: 20px;
+        color: rgb(127,80,55);;
+        text-shadow: 1px 1px 2px rgb(49, 33, 25);
+    }
+
+    #weather {
+        width: 550px;
+        display: block;
+        margin: 25px 225px;
+    }
+
+        #weather h3 {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+    #hot {
+        color: rgb(175, 52, 52);
+        display: inline;
+    }
+
+    #cold {
+        color: rgb(54, 74, 252);
+        display: inline;
+    }
+
+    #location {
+        width: 500px;
+        margin: 20px 250px
+    }
+
+        #location h3 {
+            text-align: center;
+        }
+    
+    .drinks {
+        width: 497px;
+        height: 235px;
+        display: inline-flex;
+        justify-content: center;
+
+    }
+
+        .order_h3 {
+            text-align: center;
+            margin: 10px auto 4px;
+            color: rgb(127,80,55);
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgb(49 33 25);
+        }
+    
+    .drinks img {
+        margin: 20px auto;
+    }
+
+    .drinks select[name^=size] {
+        display: inline-block;
+        margin: 10px auto
+    }
+
+    .drinks label[name^=size] {
+        display: inline-block;
+        margin: 10px 40px
+    }
+
+    .drinks select[name^=quantity] {
+        display: inline-block;
+        margin: 10px auto
+    }
+
+    .drinks label[name^=quantity] {
+        display: inline-block;
+        margin: 10px 40px
+    }
+
+    #orders {
+        display: inline-flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .order {
+        width: 300px;
+        height: 80px;
+        border: solid black 3px;
+        margin: 3px;
+    }
+

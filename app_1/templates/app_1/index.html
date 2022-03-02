@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/app_1/style.css' %}">
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="header">
+                <img src="{% static 'images/hebrews-coffee-logo.png' %}" alt="Logo" height=170 width=170>
+                {% if 'user_id' in request.session %}
+                    <h5>Logged in as, <br> {{user.first_name}} {{user.last_name}} <br><a href="/user/my_account">My Account</a>|  <a href="/user/logout">Logout</a></h5>
+                {% else %}
+                    <a href="/user/login_register">Login | Register</a>
+                {% endif %}
+            </div>
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="menu">Menu</a></li>
+                    <li><a href="order">Order-Now</a></li>
+                </ul>
+            </div>
+            <div class="body">
+                <h1>Our Story</h1>
+                <img src="{% static 'images/our_story.jpg' %}" alt="our_story" height=471 width=900>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt qui esse beatae. Nostrum facere corporis error natus, maiores dolorem illum officiis nihil perspiciatis! Laudantium, ipsum temporibus modi error iure molestiae? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum incidunt repellat, quae facilis eveniet expedita sapiente quaerat, id aliquid hic consequuntur et perferendis dolorum harum illo, neque ipsam eos amet?</p>
+                <button><a href="menu">Check out our delicious drink options!</a></button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

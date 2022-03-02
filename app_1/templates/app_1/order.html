@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order-Now</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/app_1/style.css' %}">
+    <script src="{% static 'javascript/app_1/style.js' %}" async></script>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="header">
+                <img src="{% static 'images/hebrews-coffee-logo.png' %}" alt="Logo" height=170 width=170>
+                <h5>Logged in as, <br> {{user.first_name}} {{user.last_name}}<br><a href="/user/my_account">My Account</a>| <a href="/user/logout">Logout</a></h5>
+            </div>
+            <div class="body">
+                <div class="nav_bar">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="menu">Menu</a></li>
+                        <li><a href="order">Order-Now</a></li>
+                    </ul>
+                </div>
+                <h1>Almost ready to say "ahhh!"</h1>
+                <div id="weather">
+                    <h3>Not sure if you should get a <div id="hot">hot</div> drink or a <div id="cold">cold</div> drink?
+                        Consider looking at the weather for today...</h3>
+                        <a class="weatherwidget-io" href="https://forecast7.com/en/34d48n114d32/lake-havasu-city/?unit=us" data-label_1="LAKE HAVASU CITY" data-label_2="WEATHER" data-icons="Climacons Animated" data-mode="Current" data-theme="mountains" >LAKE HAVASU CITY WEATHER</a>
+                        <script>
+                        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+                        </script>
+                </div>
+                {% if messages %}
+                    <ul class="messages">    
+                        {% for message in messages %}    
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% for drink in drinks %}
+                    <div class="drinks">
+                        <form action="process_order" method="POST">
+                            {% csrf_token %}
+                            <img src="{{drink.image}}" alt="{{drink.image}}" height=100 width=150>
+                            <h3 class="order_h3">{{drink.name}}</h3>
+                            <label for="size">Size:</label>
+                            <select name="size">
+                                <option value="small">Small: ${{drink.small}}</option>
+                                <option value="medium">Medium: ${{drink.medium}}</option>
+                                <option value="large">Large: ${{drink.large}}</option>
+                            </select>
+                            <label for="quantity">Quantity:</label>
+                            <select name="quantity">
+                                {% for num in quantity %}
+                                    <option value="{{num}}">{{num}}</option>
+                                {% endfor %}
+                            </select>
+                            <input type="hidden" name="drink" value="{{drink.id}}">
+                            <button>Place Order</button>
+                    </form>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
